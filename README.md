@@ -21,7 +21,7 @@ Nowoczesna aplikacja webowa typu Chat, integrująca model **Google Gemini AI** z
 
 ## 🚀 Technologie
 * **Backend:** Python 3.x / Flask
-* **AI SDK:** `google-genai` (Model: `gemini-1.5-flash`)
+* **AI SDK:** `google-genai` (Model: `gemini-3-flash-preview`)
 * **Frontend:** HTML5, CSS3, JavaScript
 * **Zmienne środowiskowe:** `python-dotenv`
 
