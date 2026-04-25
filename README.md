@@ -1,3 +1,6 @@
+<img width="720" height="516" alt="image" src="https://github.com/user-attachments/assets/635d9da1-7675-493a-a76a-2dfec363663b" />
+
+
 # 🤖 Gemini AI Chat App
 
 Nowoczesna aplikacja webowa typu Chat, integrująca model **Google Gemini AI** z frameworkiem **Flask**. Interfejs został zaprojektowany w stylu "Dark Mode" inspirowanym wyszukiwarką Google.
@@ -29,24 +32,28 @@ Nowoczesna aplikacja webowa typu Chat, integrująca model **Google Gemini AI** z
 
 1. **Pobierz projekt:**
    ```bash
-   git clone [https://github.com/twoj-uzytkownik/nazwa-projektu.git](https://github.com/twoj-uzytkownik/nazwa-projektu.git)
+   git clone https://github.com/przemekstankiewiczpl-spec/Chat_25_04_2026.git
    cd nazwa-projektu
 Przygotuj środowisko:
 
 Bash
 python -m venv .venv
 .\.venv\Scripts\activate  # Windows
-# source .venv/bin/activate # Linux/macOS
+
 Zainstaluj biblioteki:
 
 Bash
 pip install flask google-genai python-dotenv
+
 ⚙️ Konfiguracja
+
 Stwórz plik .env w głównym katalogu projektu i wklej swój klucz API:
 
 Fragment kodu
 GEMINI_API_KEY=TwojKluczZGoogleAIStudio
+
 🖥️ Uruchomienie
+
 Uruchom aplikację komendą:
 
 Bash
