@@ -55,17 +55,7 @@
             flex-direction: column;
             align-items: center;
             width: 100%;
-        }
-
-        .response-box {
-            margin-top: 20px;
-            padding: 15px;
-            border: 1px solid #444;
-            border-radius: 10px;
-            background: #2a2a2a;
-            color: white;
-            max-width: 600px;
-            text-align: left;
+            padding-bottom: 50px; /* Miejsce na dole, żeby tekst nie dotykał krawędzi */
         }
     </style>
 </head>
@@ -75,7 +65,7 @@
     <div class="container-wrapper">
         <h1>Czat z Gemini 3 flash</h1>
 
-        <div class="chat-container">
+        <div class="chat-container" id="chat-window">
             {% if history_list %}
                 {% for message in history_list %}
                     <div class="message {% if message.role == 'user' %}user-msg{% else %}model-msg{% endif %}">
@@ -97,7 +87,7 @@
         <form method="POST" id="chat-form">
             <input type="hidden" name="history" value='{{ history_json }}'>
 
-            <input type="text" name="prompt" required placeholder="Zadaj pytanie..."
+            <input type="text" name="prompt" id="prompt-input" required placeholder="Zadaj pytanie..."
                    style="padding: 12px; width: 350px; border-radius: 25px; border: 1px solid #555; background: #222; color: white; outline: none;">
 
             <button type="submit"
@@ -110,13 +100,26 @@
     <script>
         const form = document.getElementById('chat-form');
         const loader = document.getElementById('loader');
+        const promptInput = document.getElementById('prompt-input');
 
+        // FUNKCJA: Przewijanie na sam dół strony
+        function scrollToBottom() {
+            window.scrollTo({
+                top: document.body.scrollHeight,
+                behavior: 'smooth'
+            });
+        }
+
+        // 1. Przewiń na dół natychmiast po załadowaniu strony (po otrzymaniu odpowiedzi)
+        window.onload = function() {
+            scrollToBottom();
+            promptInput.focus(); // Opcjonalnie: ustaw kursor w polu tekstowym
+        };
+
+        // 2. Przewiń na dół po kliknięciu "Wyślij", żeby widzieć loader
         form.onsubmit = function() {
             loader.style.display = 'block';
-            // Przewijanie na dół, żeby widzieć animację ładowania
-            setTimeout(() => {
-                window.scrollTo({ top: document.body.scrollHeight, behavior: 'smooth' });
-            }, 10);
+            setTimeout(scrollToBottom, 50);
         };
     </script>
 
