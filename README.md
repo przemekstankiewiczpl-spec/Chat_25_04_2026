@@ -1,8 +1,3 @@
-Aha, rozumiem! Chodziło o to, aby cała dokumentacja README.md znalazła się w jednej zwartej formie, gotowej do wklejenia na GitHub.
-
-Oto kompletna treść pliku README.md. Skopiuj wszystko poniżej:
-
-Markdown
 # 🤖 Gemini AI Chat App
 
 Nowoczesna aplikacja webowa typu Chat, integrująca model **Google Gemini AI** z frameworkiem **Flask**. Interfejs został zaprojektowany w stylu "Dark Mode" inspirowanym wyszukiwarką Google.
