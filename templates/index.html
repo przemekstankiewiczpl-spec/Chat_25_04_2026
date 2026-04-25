@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <title>CHAT Gemini</title>
+
+    <style>
+        /* Styl dla animacji kropek */
+        #loader {
+            display: none; /* Ukryty na starcie */
+            margin-bottom: 20px;
+        }
+
+        .dots {
+            display: flex;
+            gap: 8px;
+        }
+
+        .dot {
+            width: 15px;
+            height: 15px;
+            background-color: #4285f4;
+            border-radius: 50%;
+            animation: pulse 1.5s infinite ease-in-out;
+        }
+
+        /* Kolory kropek (styl Google) */
+        .dot:nth-child(2) { background-color: #ea4335; animation-delay: 0.2s; }
+        .dot:nth-child(3) { background-color: #fbbc05; animation-delay: 0.4s; }
+
+        @keyframes pulse {
+            0%, 100% { transform: scale(0.8); opacity: 0.5; }
+            50% { transform: scale(1.2); opacity: 1; }
+        }
+
+        /* Styl dla odpowiedzi, żeby ładnie wyglądała */
+        .response-box {
+            margin-top: 30px;
+            background: #2d2e30;
+            padding: 20px;
+            border-radius: 10px;
+            max-width: 600px;
+            border: 1px solid #444;
+        }
+    </style>
+</head>
+
+<body style="display: flex; flex-direction: column; align-items: center; justify-content: center; min-height: 100vh; margin: 0; font-family: sans-serif; background-color: #1a1a1a; color: white; padding: 20px; text-align: center;">
+
+    <div id="loader">
+        <div class="dots">
+            <div class="dot"></div>
+            <div class="dot"></div>
+            <div class="dot"></div>
+        </div>
+    </div>
+
+    <h1>W czym mogę pomóc?</h1>
+
+    <form method="POST" id="chat-form">
+        <input type="text" name="prompt" required placeholder="Zadaj pytanie..."
+               style="padding: 12px; width: 350px; border-radius: 25px; border: 1px solid #555; background: #222; color: white; outline: none;">
+        <button type="submit"
+                style="padding: 12px 25px; border-radius: 25px; border: none; background: #4285f4; color: white; cursor: pointer; font-weight: bold; margin-left: 10px;">
+            OK
+        </button>
+    </form>
+
+    {% if odpowiedz %}
+    <div class="response-box">
+        <strong>Odpowiedź Gemini:</strong>
+        <p style="white-space: pre-wrap;">{{ odpowiedz }}</p>
+    </div>
+    {% endif %}
+
+    <script>
+        const form = document.getElementById('chat-form');
+        const loader = document.getElementById('loader');
+
+        form.onsubmit = function() {
+            loader.style.display = 'block'; // Pokazuje kropki
+        };
+    </script>
+
+</body>
+</html>
