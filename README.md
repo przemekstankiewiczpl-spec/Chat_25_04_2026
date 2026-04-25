@@ -1,4 +1,5 @@
-<img width="720" height="516" alt="image" src="https://github.com/user-attachments/assets/635d9da1-7675-493a-a76a-2dfec363663b" />
+<img width="567" height="183" alt="image" src="https://github.com/user-attachments/assets/5189fa85-818d-451b-b3e5-165996e74756" />
+
 
 
 # 🤖 Gemini AI Chat App
