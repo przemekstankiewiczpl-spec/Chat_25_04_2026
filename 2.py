@@ -1,4 +1,3 @@
-import os
 from flask import Flask, render_template, request
 from google import genai
 from dotenv import load_dotenv
